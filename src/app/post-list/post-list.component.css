@@ -1,0 +1,36 @@
+.blog-card {
+    box-shadow: 0 1rem 1.75rem 0 rgba(45, 55, 75, 0.1);
+    border: 0.0625rem solid rgba(220, 224, 229, 0.6);    
+}
+
+.blog-card-content {
+    position: relative
+}
+
+.blog-card-content p {
+    font-weight: 400;
+    padding: 0
+}
+
+.blog-card-content .blog-card-footer {
+    border-top: 1px dashed #cee1f8;
+    padding-top: 15px
+}
+
+.blog-card-content ul {
+    margin: 0;
+    padding: 0
+}
+
+.blog-card-content ul li {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px 10px 5px 0;
+    color: #575a7b;
+}
+
+a {
+    color: #575a7b;
+    text-decoration: none;
+}
