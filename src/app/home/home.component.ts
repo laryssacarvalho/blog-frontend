@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router){}
+  constructor(private router: Router, private localStorageService: LocalStorageService){}
   
   ngOnInit(): void {
-    if(this.authService.isLoggedIn())
-      this.router.navigate(['posts']);
+
+    this.localStorageService.userRole.subscribe(result => {
+      if(result)
+        this.router.navigate(['posts']);
+    });
   }
 }

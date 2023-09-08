@@ -1,27 +1,43 @@
-<div class="container d-flex justify-content-center">
+<div class="container">
+    <div class="row" *ngIf="userRole === 'Writer' && canSubmitPost()">
+        <div class="col-3">
+            <button type="button" class="btn btn-block btn-primary" (click)="onSubmitPost()">Submit post</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="userRole === 'Editor' && isSubmitted()">
+        <div class="col-3">
+            <button type="button" class="btn btn-block btn-primary" (click)="onApprovePost()">Approve post</button>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <div class="card">
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.content }}</p>                
             </div>
-            <div class="card">
+            <div class="card" *ngIf="isPublished() && publicComments()">
                 <h4>Comments</h4>
-                <ul class="list-unstyled" *ngFor="let comment of post.comments">
+                <ul class="list-unstyled" *ngFor="let comment of publicComments()">
                     <li *ngIf="!comment.isRejection">{{ comment.content }}</li>
                 </ul>
             </div>           
-            <div class="card">
+            <div class="card" *ngIf="isPublished()">
                 <h4>Leave a comment</h4>                
                 
-                <form class="row">
+                <form class="row" [formGroup]="form" (ngSubmit)="onSubmitComment()">
                     <div class="col">
                         <div class="form-group">
-                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..." formControlName="comment"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-block btn-primary" [disabled]="!form.valid">Submit</button>
                     </div>                                
                 </form>      
+            </div>         
+            <div class="card" *ngIf="isRejected() && rejectionComments() && userId == post.authorId">
+                <h4>Rejection Comments</h4>
+                <ul class="list-unstyled" *ngFor="let comment of rejectionComments()">
+                    <li *ngIf="!comment.isRejection">{{ comment.content }}</li>
+                </ul>
             </div>                                          
         </div>            
     </div>

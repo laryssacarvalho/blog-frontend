@@ -1,7 +1,6 @@
 .container{
     margin-top: 20px;
 }
-
 .blog-card {
     box-shadow: 0 1rem 1.75rem 0 rgba(45, 55, 75, 0.1);
     border: 0.0625rem solid rgba(220, 224, 229, 0.6);    
@@ -34,7 +33,8 @@
     color: #575a7b;
 }
 
-a {
+.post-title {
     color: #575a7b;
     text-decoration: none;
+    cursor: pointer;
 }

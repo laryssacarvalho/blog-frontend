@@ -14,7 +14,6 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(public authService: AuthService, public localStorageService: LocalStorageService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     if (this.isAuthenticationRequest(req)) return next.handle(req);
 
     let token = this.localStorageService.getToken();
@@ -26,7 +25,7 @@ export class TokenInterceptor implements HttpInterceptor {
   }
 
   private isAuthenticationRequest(req: HttpRequest<any>) {
-    return req.url.includes('/auth');
+    return req.url.includes('/auth/');
   }
 
   private addTokenToHeader(req: HttpRequest<any>, token: string) {

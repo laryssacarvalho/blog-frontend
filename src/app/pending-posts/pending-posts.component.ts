@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post.service';
+import { Component } from '@angular/core';
 import { PostModel } from '../models/post.model';
 import { faCalendarAlt, faComments } from '@fortawesome/free-solid-svg-icons';
+import { PostService } from '../services/post.service';
 
 @Component({
-  selector: 'app-post-list',
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.css']
+  selector: 'app-pending-posts',
+  templateUrl: './pending-posts.component.html',
+  styleUrls: ['./pending-posts.component.css']
 })
-export class PostListComponent implements OnInit {
+export class PendingPostsComponent {
   faComments = faComments;
   faCalendarAlt = faCalendarAlt;  
   posts: PostModel[] = [];
@@ -16,12 +16,10 @@ export class PostListComponent implements OnInit {
   constructor(private postService: PostService){}
 
   ngOnInit(): void {
-
-    this.postService.getPublishedPosts()
+    this.postService.getPendingPosts()
       .subscribe(result => {
         if(result.data?.length > 0)
           this.posts = result.data;
-
       });
   }
 }

@@ -16,18 +16,9 @@ export class LoginComponent {
     "password": new FormControl("", Validators.required),
   });
 
-  constructor(private authService: AuthService, 
-    private localStorageService: LocalStorageService, 
-    private jwtService: JwtService, 
-    private readonly router: Router){}
+  constructor(private authService: AuthService){}
 
   onSubmit() {
-    this.authService.login(this.form.value.email!, this.form.value.password!)
-      .subscribe(result => {        
-        this.localStorageService.setToken(result.data.token);
-        let role = this.jwtService.getClaim(result.data.token, 'role');
-        this.localStorageService.setRole(role);
-        this.router.navigate(["posts"]);
-      });
+    this.authService.login(this.form.value.email!, this.form.value.password!);
   }
 }

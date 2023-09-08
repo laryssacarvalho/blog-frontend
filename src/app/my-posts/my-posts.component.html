@@ -1,17 +1,22 @@
 <div class="container">
-    <h2>Published posts</h2>
+    <h2>My posts</h2>
+
+    <div class="row">
+        <div class="col-3">
+            <a routerLink="/posts/add" class="btn btn-primary">New Post</a>
+        </div>
+    </div>
     <div class="row">
         <div class="col-4" *ngIf="posts.length == 0">
-            There are no published posts
+            You haven't created any posts yet
         </div>
         <div class="col-4" *ngFor="let post of posts">
             <div class="blog-card">                
                 <div class="blog-card-content p-4">
-                    <h3 class="h5 mb-3"><a [routerLink]="['/posts', post.id]">{{ post.title }}</a></h3>
+                    <h3 class="h5 mb-3"><a class="post-title" [routerLink]="['/posts', post.id]">{{ post.title }}</a></h3>
                     <p>{{ (post.content.length > 100) ? (post.content | slice:0:100) + '...' : (post.content) }}</p>
                     <div class="blog-card-footer">
                         <ul>
-                            <li><fa-icon [icon]="faCalendarAlt"></fa-icon> {{ post.publishedAt | date }}</li>
                             <li><fa-icon [icon]="faComments"></fa-icon> {{ post.comments.length }}</li>
                         </ul>
                     </div>

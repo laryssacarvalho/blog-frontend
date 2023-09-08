@@ -5,6 +5,9 @@ import { LoginComponent } from './login/login.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { AddPostComponent } from './add-post/add-post.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
+import { PendingPostsComponent } from './pending-posts/pending-posts.component';
 
 
 const routes: Routes = [
@@ -12,9 +15,10 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "login", component: LoginComponent},
   {path: "posts", component: PostListComponent, canActivate: [AuthGuard]},
-  {path: 'posts/:postId', component: PostDetailComponent}
-  // {path: "contact-create", component: ContactCreateComponent},
-  // {path: "contact-list", component: ContactListComponent}  
+  {path: 'posts/add', component: AddPostComponent, canActivate: [AuthGuard]},
+  {path: 'posts/my-posts', component: MyPostsComponent, canActivate: [AuthGuard]},
+  {path: 'posts/pending', component: PendingPostsComponent, canActivate: [AuthGuard]},
+  {path: 'posts/:postId', component: PostDetailComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

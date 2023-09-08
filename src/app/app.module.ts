@@ -13,6 +13,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddPostComponent } from './add-post/add-post.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
+import { PendingPostsComponent } from './pending-posts/pending-posts.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LoginComponent,
     PostListComponent,
     PostDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddPostComponent,
+    MyPostsComponent,
+    PendingPostsComponent
   ],
   imports: [
     BrowserModule,
