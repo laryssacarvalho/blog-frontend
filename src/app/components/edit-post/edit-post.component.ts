@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostModel } from '../models/post.model';
-import { LocalStorageService } from '../services/local-storage.service';
+import { PostModel } from '../../models/post.model';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-edit-post',

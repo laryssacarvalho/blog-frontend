@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
 import { ActivatedRoute } from '@angular/router';
-import { PostModel } from '../models/post.model';
-import { LocalStorageService } from '../services/local-storage.service';
-import { PostStatus } from '../enums/post-status.enum';
+import { PostModel } from '../../models/post.model';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { PostStatus } from '../../enums/post-status.enum';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

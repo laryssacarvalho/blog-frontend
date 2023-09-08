@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { PostModel } from '../models/post.model';
+import { PostModel } from '../../models/post.model';
 import { faCalendarAlt, faComments } from '@fortawesome/free-solid-svg-icons';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-pending-posts',

@@ -5,6 +5,7 @@ import { LoginModel } from '../models/login.model';
 import { LocalStorageService } from './local-storage.service';
 import { Router } from '@angular/router';
 import { JwtService } from './jwt.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class AuthService {
   constructor(private readonly http: HttpClient, 
     private localStorageService: LocalStorageService, 
     private router: Router,
-    private jwtService: JwtService) { 
-    this.apiBaseUrl = 'https://laryssablog.azurewebsites.net/auth';
+    private jwtService: JwtService) {
+    this.apiBaseUrl = `${environment.apiUrl}/auth`;
   }
 
   login(email: string, password: string) {

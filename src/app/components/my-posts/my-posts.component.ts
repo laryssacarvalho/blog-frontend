@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { faCalendarAlt, faComments } from '@fortawesome/free-solid-svg-icons';
-import { AuthorService } from '../services/author.service';
-import { LocalStorageService } from '../services/local-storage.service';
-import { PostModel } from '../models/post.model';
+import { AuthorService } from '../../services/author.service';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { PostModel } from '../../models/post.model';
 
 @Component({
   selector: 'app-my-posts',

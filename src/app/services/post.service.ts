@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiResponseModel } from '../models/api-response.model';
 import { PostModel } from '../models/post.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ import { PostModel } from '../models/post.model';
 export class PostService {
   private apiBaseUrl = '';
   
-  constructor(private readonly http: HttpClient) { 
-    this.apiBaseUrl = 'https://laryssablog.azurewebsites.net/posts';
+  constructor(private readonly http: HttpClient) {     
+    this.apiBaseUrl = `${environment.apiUrl}/posts`;
   }
 
   getPublishedPosts(): Observable<ApiResponseModel<PostModel[]>> {

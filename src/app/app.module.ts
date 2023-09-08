@@ -4,19 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostDetailComponent } from './post-detail/post-detail.component';
-import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { HeaderComponent } from './components/header/header.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AddPostComponent } from './add-post/add-post.component';
-import { MyPostsComponent } from './my-posts/my-posts.component';
-import { PendingPostsComponent } from './pending-posts/pending-posts.component';
-import { EditPostComponent } from './edit-post/edit-post.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
+import { MyPostsComponent } from './components/my-posts/my-posts.component';
+import { PendingPostsComponent } from './components/pending-posts/pending-posts.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
