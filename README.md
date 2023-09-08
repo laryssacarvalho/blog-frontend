@@ -34,9 +34,6 @@ Here are the main frameworks/libraries used on this project.
 
 I chose Angular because it's the frontend framework I have the most experience with.
 
-## Getting Started
-There are two ways of running this project: on your machine or on a docker container. The latter one is easier if you have Docker installed. 
-
 ### Dependencies
 
 The API is deployed in Azure so you can use the following URL on the environment configuration: https://laryssablog.azurewebsites.net/ and not have the trouble of executing the backend application.
@@ -45,13 +42,13 @@ But you if do prefer to run the backend locally, then check the repository docum
 
 * [API project](https://github.com/laryssacarvalho/blog-backend)
 
-If you are going to execute the frontend project on your machine instead of using Docker, then you will need to install these dependencies too:
+To execute this frontend project on your machine you will need to install these dependencies:
 
 * [Node.js](https://nodejs.org/en/)
 * [Angular CLI](https://github.com/angular/angular-cli)
 
 ### Configuration
-The only configuration is the URL of the backend API, this can be done in the _/environments/environment.ts_ or _/environments/environment.development.ts_. You don't need to change the default value unless you execute the API on another port or want to use the deployed version.
+The only configuration is the URL of the backend API, this can be done in the _/environments/environment.ts_ or _/environments/environment.development.ts_. You don't need to change the default value unless you execute the API on another port or want to use the deployed API.
 
 ### Execution
 
@@ -68,20 +65,6 @@ This will install all the project dependencies
 ng serve
 ```
 This will execute the project, just access http://localhost:4200 to view the application.
-
-#### Using Docker
-
-If you have Docker installed, then you only need to execute this two commands on the root folder. The first one is going to build the image using the Dockerfile on the root of the project and the second one will run a container using that image.
-
-```
-docker build -t blog-angular-image .
-```
-
-```
-docker run -it --rm -p 9000:80 blog-angular-image
-```
-
-You can now access http://localhost:9000 to view the application.
 
 #### Sample users
 
