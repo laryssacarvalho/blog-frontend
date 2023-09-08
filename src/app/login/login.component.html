@@ -1,7 +1,7 @@
 <div class="container d-flex align-items-center justify-content-center fill">
     <div class="row">
         <div class="col">
-            <div class="card" style="width: 40rem;">
+            <div class="card" style="width: 30rem;">
                 <div class="card-body">
                     <form [formGroup]="form" (ngSubmit)="onSubmit()">
                         <div class="form-group">
@@ -11,8 +11,8 @@
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" formControlName="password">
-                        </div>
-                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">LOG IN</button>
+                        </div>                        
+                        <button type="submit" class="btn btn-primary mt-2 float-end" [disabled]="!form.valid">Log in</button>                        
                     </form>                    
                 </div>
             </div>

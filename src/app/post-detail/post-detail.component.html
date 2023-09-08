@@ -6,7 +6,7 @@
     </div>
     <div class="row" *ngIf="userRole === 'Editor' && isSubmitted()">
         <div class="col-3">
-            <button type="button" class="btn btn-block btn-primary" (click)="onApprovePost()">Approve post</button>            
+            <button type="button" class="btn btn-block btn-success" (click)="onApprovePost()">Approve post</button>            
         </div>
         <div class="col-9">
             <form class="row align-items-center" [formGroup]="rejectionForm" (ngSubmit)="onRejectPost()">
@@ -14,7 +14,7 @@
                     <input type="text" class="form-control" formControlName="comment">                  
                 </div>                            
                 <div class="col-3">
-                  <button type="submit" class="btn btn-primary">Reject</button>
+                  <button type="submit" class="btn btn-danger">Reject</button>
                 </div>
               </form>
         </div>
@@ -37,9 +37,9 @@
                 <form class="row" [formGroup]="form" (ngSubmit)="onSubmitComment()">
                     <div class="col">
                         <div class="form-group">
-                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..." formControlName="comment"></textarea>
+                            <textarea rows="2" class="form-control no-resize" placeholder="Please type what you want..." formControlName="comment"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-block btn-primary" [disabled]="!form.valid">Submit</button>
+                        <button type="submit" class="btn btn-block btn-secondary mt-2" [disabled]="!form.valid">Submit</button>
                     </div>                                
                 </form>      
             </div>         
