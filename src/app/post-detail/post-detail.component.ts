@@ -21,6 +21,7 @@ export class PostDetailComponent implements OnInit {
   userId!: number;  
   post: PostModel = { title: '', content: '', authorId: 0, comments: [], id: 0, publishedAt: null, status: 0};
   form = new FormGroup({ "comment": new FormControl("", Validators.required) });
+  rejectionForm = new FormGroup({ "comment": new FormControl("") });
 
   ngOnInit(): void {
     this.userRole = this.localStorageService.getRole()!;
@@ -51,11 +52,14 @@ export class PostDetailComponent implements OnInit {
     });
   }
 
+  onRejectPost(){
+    this.postService.rejectPost(this.postId, this.rejectionForm.value.comment ? this.rejectionForm.value.comment! : null)    
+      .subscribe(_ => this.getPost());
+  }
+
   onSubmitComment(){
     this.postService.addComment(this.post.id, this.form.value.comment!)
-    .subscribe(_ => {
-      this.getPost();
-    });
+      .subscribe(_ => this.getPost());
   }
 
   canSubmitPost(){

@@ -38,7 +38,7 @@ export class PostService {
     return this.http.post<ApiResponseModel<PostModel>>(`${this.apiBaseUrl}/${postId}/approve`, null);
   }
 
-  rejectPost(postId: number, comment: string): Observable<ApiResponseModel<PostModel>> {
+  rejectPost(postId: number, comment: string | null): Observable<ApiResponseModel<PostModel>> {
     return this.http.post<ApiResponseModel<PostModel>>(`${this.apiBaseUrl}/${postId}/reject`, { comment });
   }
 

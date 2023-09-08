@@ -18,6 +18,7 @@
                     <div class="blog-card-footer">
                         <ul>
                             <li><fa-icon [icon]="faComments"></fa-icon> {{ post.comments.length }}</li>
+                            <li><a *ngIf="post.status != 2 && post.status != 1" [routerLink]="['/posts/edit', post.id]" class="btn btn-primary">Edit</a></li>
                         </ul>
                     </div>
                 </div>

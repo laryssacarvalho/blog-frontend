@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h4>Edit post</h4>
+                <form class="row" [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" formControlName="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Content</label>
+                            <textarea formControlName="content" rows="10" id="content" class="form-control no-resize"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-block btn-primary" [disabled]="!form.valid">Submit</button>
+                    </div>                                
+                </form>      
+            </div>                                          
+        </div>            
+    </div>
+</div>

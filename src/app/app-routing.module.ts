@@ -8,6 +8,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
 import { PendingPostsComponent } from './pending-posts/pending-posts.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'posts/add', component: AddPostComponent, canActivate: [AuthGuard]},
   {path: 'posts/my-posts', component: MyPostsComponent, canActivate: [AuthGuard]},
   {path: 'posts/pending', component: PendingPostsComponent, canActivate: [AuthGuard]},
+  {path: 'posts/edit/:postId', component: EditPostComponent, canActivate: [AuthGuard]},
   {path: 'posts/:postId', component: PostDetailComponent, canActivate: [AuthGuard]},
 ];
 

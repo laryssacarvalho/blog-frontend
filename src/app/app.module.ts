@@ -16,6 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddPostComponent } from './add-post/add-post.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
 import { PendingPostsComponent } from './pending-posts/pending-posts.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PendingPostsComponent } from './pending-posts/pending-posts.component';
     HeaderComponent,
     AddPostComponent,
     MyPostsComponent,
-    PendingPostsComponent
+    PendingPostsComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
